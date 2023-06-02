@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import PostItem from "./components/PostItem";
 import './styles/App.css'
+import PostList from "./components/PostList";
 function App() {
   const [posts, setPosts] = useState([
     { id: 1, title: "Js Post Title", body: "Description" },
@@ -11,13 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      
-
-      {
-        posts.map(post => 
-          <PostItem post={post} key={ post.id } />
-          )
-      }
+      <PostList posts={posts}/> 
     </div>
   );
 }
